@@ -1,5 +1,5 @@
+## ------------------------------------------------------------------------
 library(jrvFinance)
-Yield
 
 
 # Jan02 Yield
@@ -295,7 +295,7 @@ y_y_15 <- c(Jan15_bond_y_1, Jan15_bond_y_2, Jan15_bond_y_3, Jan15_bond_y_4, Jan1
 
 
 # Full Yield Curve
-plot(type="l",x_y_02, y_y_02, xlab="Time to Maturity(Year)", ylab="Yield", col="red", main = "Yield Curve",xlim =c(0,5))
+plot(type="l",x_y_02, y_y_02, xlab="Time to Maturity(Year)", ylab="Yield", col="red", main = "Yield Curve")
 lines(x_y_03, y_y_03,col="orange")
 lines(x_y_06, y_y_06,col="yellow")
 lines(x_y_07, y_y_07,col="green")
@@ -304,14 +304,7 @@ lines(x_y_09, y_y_09,col="purple")
 lines(x_y_10, y_y_10,col="brown")
 lines(x_y_13, y_y_13,col="darkblue")
 lines(x_y_14, y_y_14,col="darkgray")
-lines(x_y_15, y_y_15,col=“pink")
-
-
-
-
-
-Spot
-
+lines(x_y_15, y_y_15,col="pink")
 
 #Jan 02 Spot Rate
 
@@ -1046,7 +1039,7 @@ y_s_15 <-c(Jan15_spot_1,Jan15_spot_2, Jan15_spot_3, Jan15_spot_4, Jan15_spot_5, 
 
 
 #full spot curve
-plot(type="l",x_s_02, y_s_02, xlab="Time to Maturity(Year)“, ylab="Spot Rate", main = "Spot Curve", col="red")
+plot(type="l",x_s_02, y_s_02, xlab="Time to Maturity(Year)", ylab="Spot Rate", main = "Spot Curve", col="red")
 lines(x_s_03, y_s_03, col="orange")
 lines(x_s_06, y_s_06,col="yellow")
 lines(x_s_07, y_s_07,col="green")
@@ -1055,12 +1048,8 @@ lines(x_s_09, y_s_09,col="purple")
 lines(x_s_10, y_s_10,col="brown")
 lines(x_s_13, y_s_13,col="darkblue")
 lines(x_s_14, y_s_14,col="darkgray")
-lines(x_s_15, y_s_15,col=“pink")
+lines(x_s_15, y_s_15,col="pink")
 
-
-
-
-Forward
 
 
 #Forward rate
@@ -1164,27 +1153,21 @@ lines(x_f, f_09,col="purple")
 lines(x_f, f_10,col="brown")
 lines(x_f, f_13,col="darkblue")
 lines(x_f, f_14,col="darkgray")
-lines(x_f, f_15,col=“pink")
-#Yield matrix & cov
+lines(x_f, f_15,col="pink")
 
+
+#Yield matrix & cov
 yield_matrix <- matrix(c(log(Jan03_bond_y_2/Jan02_bond_y_2), log(Jan06_bond_y_2/Jan03_bond_y_2), log(Jan07_bond_y_2/Jan06_bond_y_2), log(Jan08_bond_y_2/Jan07_bond_y_2), log(Jan09_bond_y_2/Jan08_bond_y_2), log(Jan10_bond_y_2/Jan09_bond_y_2), log(Jan13_bond_y_2/Jan10_bond_y_2), log(Jan14_bond_y_2/Jan13_bond_y_2), log(Jan15_bond_y_2/Jan14_bond_y_2), log(Jan03_bond_y_4/Jan02_bond_y_4), log(Jan06_bond_y_4/Jan03_bond_y_4), log(Jan07_bond_y_4/Jan06_bond_y_4), log(Jan08_bond_y_4/Jan07_bond_y_4), log(Jan09_bond_y_4/Jan08_bond_y_4), log(Jan10_bond_y_4/Jan09_bond_y_4), log(Jan13_bond_y_4/Jan10_bond_y_4), log(Jan14_bond_y_4/Jan13_bond_y_4), log(Jan15_bond_y_4/Jan14_bond_y_4), log(Jan03_bond_y_6/Jan02_bond_y_6), log(Jan06_bond_y_6/Jan03_bond_y_6), log(Jan07_bond_y_6/Jan06_bond_y_6), log(Jan08_bond_y_6/Jan07_bond_y_6), log(Jan09_bond_y_6/Jan08_bond_y_6), log(Jan10_bond_y_6/Jan09_bond_y_6), log(Jan13_bond_y_6/Jan10_bond_y_6), log(Jan14_bond_y_6/Jan13_bond_y_6), log(Jan15_bond_y_6/Jan14_bond_y_6), log(Jan03_bond_y_8/Jan02_bond_y_8), log(Jan06_bond_y_8/Jan03_bond_y_8), log(Jan07_bond_y_8/Jan06_bond_y_8), log(Jan08_bond_y_8/Jan07_bond_y_8), log(Jan09_bond_y_8/Jan08_bond_y_8), log(Jan10_bond_y_8/Jan09_bond_y_8), log(Jan13_bond_y_8/Jan10_bond_y_8), log(Jan14_bond_y_8/Jan13_bond_y_8), log(Jan15_bond_y_8/Jan14_bond_y_8), log(Jan03_bond_y_10/Jan02_bond_y_10), log(Jan06_bond_y_10/Jan03_bond_y_10), log(Jan07_bond_y_10/Jan06_bond_y_10), log(Jan08_bond_y_10/Jan07_bond_y_10), log(Jan09_bond_y_10/Jan08_bond_y_10), log(Jan10_bond_y_10/Jan09_bond_y_10), log(Jan13_bond_y_10/Jan10_bond_y_10), log(Jan14_bond_y_10/Jan13_bond_y_10), log(Jan15_bond_y_10/Jan14_bond_y_10)
 ),nrow=9)
-
 covariance_yield<-cov(yield_matrix)
-
-
-
 
 #forward matrix & cov
 
 forward_matrix <- matrix(c(log(Jan03_f_1/Jan02_f_1), log(Jan06_f_1/Jan03_f_1), log(Jan07_f_1/Jan06_f_1), log(Jan08_f_1/Jan07_f_1), log(Jan09_f_1/Jan08_f_1), log(Jan10_f_1/Jan09_f_1), log(Jan13_f_1/Jan10_f_1), log(Jan14_f_1/Jan13_f_1), log(Jan15_f_1/Jan14_f_1), log(Jan03_f_2/Jan02_f_2), log(Jan06_f_2/Jan03_f_2), log(Jan07_f_2/Jan06_f_2), log(Jan08_f_2/Jan07_f_2), log(Jan09_f_2/Jan08_f_2), log(Jan10_f_2/Jan09_f_2), log(Jan13_f_2/Jan10_f_2), log(Jan14_f_2/Jan13_f_2), log(Jan15_f_2/Jan14_f_2), log(Jan03_f_3/Jan02_f_3), log(Jan06_f_3/Jan03_f_3), log(Jan07_f_3/Jan06_f_3), log(Jan08_f_3/Jan07_f_3), log(Jan09_f_3/Jan08_f_3), log(Jan10_f_3/Jan09_f_3), log(Jan13_f_3/Jan10_f_3), log(Jan14_f_3/Jan13_f_3), log(Jan15_f_3/Jan14_f_3), log(Jan03_f_4/Jan02_f_4), log(Jan06_f_4/Jan03_f_4), log(Jan07_f_4/Jan06_f_4), log(Jan08_f_4/Jan07_f_4), log(Jan09_f_4/Jan08_f_4), log(Jan10_f_4/Jan09_f_4), log(Jan13_f_4/Jan10_f_4), log(Jan14_f_4/Jan13_f_4), log(Jan15_f_4/Jan14_f_4)
 ),nrow=9)
 
-
 covariance_forward<-cov(forward_matrix)
-
 
 eigen(covariance_yield)
 eigen(covariance_forward)
-
 
